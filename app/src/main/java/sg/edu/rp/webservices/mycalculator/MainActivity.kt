@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     var trans = false
     var point = false
     var before = "0"
-    var after = "0"
+    var after = ""
     var process = ""
     var question = ""
     var answer = ""
@@ -26,10 +26,14 @@ class MainActivity : AppCompatActivity() {
             button0.id -> if (trans == false){
                 if (before.toInt() != 0){
                     before = before + "0"
+                } else{
+                    before = "0"
                 }
             } else{
                 if (after.toInt() != 0){
                     after = after + "0"
+                } else{
+                    after = "0"
                 }
             }
             button1.id -> if (trans == false){
@@ -163,42 +167,46 @@ class MainActivity : AppCompatActivity() {
             }
             buttonPlus.id -> if (trans == false){
                 process = "+"
+                after = "0"
                 trans = true
                 point = false
             } else{
                 before = (before.toInt() + after.toInt()).toString()
                 process = "+"
-                after = ""
+                after = "0"
                 point = false
             }
             buttonMinus.id -> if (trans == false){
                 process = "-"
+                after = "0"
                 trans = true
                 point = false
             } else{
                 before = (before.toInt() - after.toInt()).toString()
                 process = "-"
-                after = ""
+                after = "0"
                 point = false
             }
             buttonTimes.id -> if (trans == false){
                 process = "*"
+                after = "0"
                 trans = true
                 point = false
             } else{
                 before = (before.toInt() * after.toInt()).toString()
                 process = "*"
-                after = ""
+                after = "0"
                 point = false
             }
             buttonDivide.id -> if (trans == false){
                 process = "/"
+                after = "0"
                 trans = true
                 point = false
             } else{
                 before = (before.toInt() / after.toInt()).toString()
                 process = "/"
-                after = ""
+                after = "0"
                 point = false
             }
             buttonEquals.id -> if (trans == false){
@@ -220,14 +228,14 @@ class MainActivity : AppCompatActivity() {
                 trans = false
                 before = "0"
                 process = ""
-                after = ""
+                after = "0"
             }
             buttonAC.id -> {
                 before = "0"
                 process = ""
                 point = false
                 trans = false
-                after = ""
+                after = "0"
                 answer = ""
                 textViewA.text = ""
             }
