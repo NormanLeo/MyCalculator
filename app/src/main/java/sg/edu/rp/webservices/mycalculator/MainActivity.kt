@@ -158,10 +158,14 @@ class MainActivity : AppCompatActivity() {
                 if (point == false){
                     before = before + "."
                     point = true
+                } else{
+                    point = true
                 }
             } else{
                 if (point == false){
                     after = after + "."
+                    point = true
+                } else{
                     point = true
                 }
             }
